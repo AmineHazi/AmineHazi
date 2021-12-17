@@ -1,0 +1,16 @@
+
+
+main: main.o test.o 
+	clang main.o test.o -o output
+
+
+main.o: main.c
+	clang -c main.c
+
+
+test.o: test.o test.h
+	clang -c test.c
+
+
+clearall: 
+	rm *.o output
